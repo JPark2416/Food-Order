@@ -1,18 +1,14 @@
 import { useState, useEffect } from "react";
 import Header from "./components/Header";
-import MealList from "./components/MealList";
+import Meals from "./components/Meals";
+import {CartContextProvider} from "./store/CartContext.jsx";
 
 function App() {
-  const [foodList, setFoodList] = useState([])
-
-  useEffect(() => {
-    fetch()
-  })
   return (
-    <>
+    <CartContextProvider>
       <Header />
-      <MealList/>
-    </>
+      <Meals/>
+    </CartContextProvider>
   );
 }
 
