@@ -28,8 +28,6 @@ function Meals() {
 
   return (
     <div>
-      
-      <p>MealList</p>
       <ul id="meals">
         {meals.map((meal) => (
           <MealItem key={meal.id} meal={meal}/>

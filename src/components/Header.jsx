@@ -23,7 +23,9 @@ function Header() {
         <h1>ReactFood</h1>
       </div>
       <nav>
-        <Button textOnly onClick={handleShowCart}>Cart ({totalCartItems})</Button>
+        <Button textOnly onClick={handleShowCart}>
+          Cart ({totalCartItems})
+        </Button>
       </nav>
     </header>
   )
