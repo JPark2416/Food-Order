@@ -1,24 +1,20 @@
 import { useState, useEffect } from "react";
 import MealItem from "./MealItem";
 
-
-
 function Meals() {
   const [meals, setMeals] = useState([]);
 
-
-  
   async function fetchMeals() {
     try {
-      const response = await fetch('http://localhost:3000/meals')
+      const response = await fetch("http://localhost:3000/meals");
 
-      if(!response.ok) {
-        throw new Error('response is not OK : fetchMeals()')
+      if (!response.ok) {
+        throw new Error("response is not OK : fetchMeals()");
       }
       const data = await response.json();
-      setMeals(data)
-    } catch(error) {
-      console.log('Error:', error);
+      setMeals(data);
+    } catch (error) {
+      console.log("Error:", error);
     }
   }
 
@@ -30,12 +26,11 @@ function Meals() {
     <div>
       <ul id="meals">
         {meals.map((meal) => (
-          <MealItem key={meal.id} meal={meal}/>
-        )
-        )}
+          <MealItem key={meal.id} meal={meal} />
+        ))}
       </ul>
     </div>
-  )
+  );
 }
 
-export default Meals
+export default Meals;
